@@ -6,14 +6,16 @@ var topic = "";
 
 // this function will create buttons from the 'topics' array
 var createButton = function(){
-
+    
+    $("#buttonArea").empty();
+    
     for (var i=0; i<topics.length; i++) {
         button = $("<button type= button>" + topics[i] + "</button>").addClass("btn btn-primary ml-2 mb-2").attr("data",topics[i]);
             $("#buttonArea").append(button);
     };
 }
 
-$("#buttonArea").on("click",function(){
+$("#buttonArea").on("click",".btn",function(){
     var cartoons = $(this).attr("data");
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + cartoons + 
         "&api_key=MRdbFPL3mQjxO5iDgMSWJ1Cgls97KPfn&limit=10";
@@ -50,7 +52,7 @@ $("#buttonArea").on("click",function(){
     });
 })
 
-$(".gif").on("click",function(){
+$(".gif").on("click",".gif",function(){
     var state = $(this).attr("data-state");
         if(state === "still") {
             $(this).attr("src", $(this).attr("data-animate"));
