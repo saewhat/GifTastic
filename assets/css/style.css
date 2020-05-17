@@ -3,6 +3,7 @@ body{
 }
 
 h2{
+    margin-top: 15px;
     text-align: center;
 }
 
@@ -12,5 +13,12 @@ fieldset{
     border-radius: 16px;
 }
 
+.gifs{
+    width: 410px;
+    float: left;
+}
 
+#gifArea{
+    margin-bottom: 20px;
+}
 
